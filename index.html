@@ -158,15 +158,25 @@ body { font-family: var(--f); background: var(--dark); color: #fff; overflow-x: 
    SECTION 1 — HERO
 ═══════════════════════════════════════ */
 .hero {
-  background: var(--dark);
+  background: #06091A;
   position: relative; overflow: hidden;
   padding: 120px 0 80px;
 }
 .hero::before {
   content: ''; position: absolute; inset: 0;
   background:
-    radial-gradient(ellipse 65% 75% at 5% 50%, rgba(0,47,108,0.5) 0%, transparent 60%),
-    radial-gradient(ellipse 45% 55% at 100% 10%, rgba(0,163,225,0.1) 0%, transparent 55%);
+    radial-gradient(ellipse 70% 80% at -5% 50%,  rgba(0,47,108,0.65)  0%, transparent 55%),
+    radial-gradient(ellipse 50% 60% at 105% 10%,  rgba(0,163,225,0.12) 0%, transparent 50%),
+    radial-gradient(ellipse 40% 50% at 60% 100%,  rgba(0,47,108,0.25)  0%, transparent 55%),
+    radial-gradient(ellipse 30% 30% at 100% 80%,  rgba(0,163,225,0.07) 0%, transparent 50%);
+  pointer-events: none;
+}
+.hero::after {
+  content: ''; position: absolute; inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.028) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.028) 1px, transparent 1px);
+  background-size: 44px 44px;
   pointer-events: none;
 }
 
