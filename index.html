@@ -175,8 +175,9 @@ body { font-family: var(--f); background: var(--dark); color: #fff; overflow-x: 
   display: grid; grid-template-columns: 1fr 420px; gap: 64px; align-items: center;
 }
 @media (max-width: 960px) {
-  .hero-inner { grid-template-columns: 1fr; }
-  .hero-visual-wrap { display: none; }
+  .hero-inner { grid-template-columns: 1fr; gap: 36px; }
+  .hero-visual-wrap { order: -1; }
+  .hero-visual-wrap img { height: 360px; }
 }
 
 .hero-kicker { margin-bottom: 20px; }
