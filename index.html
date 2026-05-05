@@ -16,12 +16,18 @@
   --yellow:   #FFE916;
   --green:    #00755E;
   --scarcity: #FF4500;
-  --dark:     #0D0D0D;
-  --dark2:    #131313;
-  --dark3:    #1A1A1A;
-  --card:     #181818;
-  --border:   rgba(255,255,255,0.07);
+  --dark:     #06091A;
+  --dark2:    #0B1535;
+  --dark3:    #0F1F40;
+  --card:     #0D1A35;
+  --border:   rgba(255,255,255,0.09);
   --muted:    rgba(255,255,255,0.45);
+  /* light section tokens */
+  --lt-bg:    #F5F7FA;
+  --lt-card:  #FFFFFF;
+  --lt-border:#E2E8F0;
+  --lt-text:  #111827;
+  --lt-muted: #6B7280;
   --f:        'Be Vietnam Pro', sans-serif;
 }
 
@@ -116,7 +122,7 @@ body { font-family: var(--f); background: var(--dark); color: #fff; overflow-x: 
 ═══════════════════════════════════════ */
 .nav {
   position: sticky; top: 0; z-index: 100;
-  background: rgba(13,13,13,0.96); backdrop-filter: blur(16px);
+  background: rgba(6,9,26,0.97); backdrop-filter: blur(16px);
   border-bottom: 1px solid var(--border);
   padding: 0 48px; height: 64px;
   display: flex; align-items: center; justify-content: space-between;
@@ -202,7 +208,7 @@ body { font-family: var(--f); background: var(--dark); color: #fff; overflow-x: 
 .hero-mentor { width: 100%; height: 520px; border-radius: 16px; }
 .hero-float {
   position: absolute;
-  background: rgba(22,22,22,0.92); backdrop-filter: blur(12px);
+  background: rgba(11,21,53,0.92); backdrop-filter: blur(12px);
   border: 1px solid var(--border); border-radius: 12px; padding: 14px 18px;
 }
 .hero-float-1 { bottom: 28px; left: -28px; }
@@ -261,7 +267,7 @@ body { font-family: var(--f); background: var(--dark); color: #fff; overflow-x: 
    SECTION 3 — INSIGHT QUOTE
 ═══════════════════════════════════════ */
 .insight {
-  background: linear-gradient(160deg, #06091a 0%, rgba(0,47,108,0.7) 45%, #090909 100%);
+  background: linear-gradient(160deg, #04061a 0%, #002F6C 45%, #060918 100%);
   padding: 96px 0; text-align: center;
 }
 .insight-intro {
@@ -298,7 +304,7 @@ body { font-family: var(--f); background: var(--dark); color: #fff; overflow-x: 
 /* ═══════════════════════════════════════
    SECTION 4 — PROOF / RESULTS
 ═══════════════════════════════════════ */
-.proof { background: var(--dark); padding: 96px 0; }
+.proof { background: var(--lt-bg); padding: 96px 0; }
 
 .proof-grid {
   display: grid;
@@ -317,17 +323,17 @@ body { font-family: var(--f); background: var(--dark); color: #fff; overflow-x: 
 .proof-img-5 { height: 188px; }
 
 .proof-source {
-  font-size: 13px; color: var(--muted); text-align: center;
+  font-size: 13px; color: var(--lt-muted); text-align: center;
   margin-bottom: 48px;
 }
-.proof-source strong { color: rgba(255,255,255,0.75); }
+.proof-source strong { color: var(--navy); }
 
 
 /* ═══════════════════════════════════════
    SECTION 5 — COURSE INTRO
 ═══════════════════════════════════════ */
 .course-intro {
-  background: linear-gradient(180deg, var(--dark2) 0%, var(--dark3) 100%);
+  background: linear-gradient(180deg, #0B1535 0%, #0F1F40 100%);
   padding: 96px 0; text-align: center;
 }
 .ci-pre {
@@ -355,7 +361,7 @@ body { font-family: var(--f); background: var(--dark); color: #fff; overflow-x: 
 /* ═══════════════════════════════════════
    SECTION 6 — CURRICULUM
 ═══════════════════════════════════════ */
-.curriculum { background: var(--dark); padding: 96px 0; }
+.curriculum { background: var(--lt-card); padding: 96px 0; }
 .curriculum-grid {
   display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 52px;
 }
@@ -389,11 +395,48 @@ body { font-family: var(--f); background: var(--dark); color: #fff; overflow-x: 
 
 .curriculum-cta { text-align: center; margin-top: 52px; }
 
+/* ── LIGHT SECTION OVERRIDES — Proof & Curriculum ── */
+.proof .section-label,
+.curriculum .section-label { color: var(--blue); }
+
+.proof .section-title,
+.curriculum .section-title { color: var(--navy); }
+
+.proof .section-title .y { color: var(--navy); }
+.proof .section-title .b { color: var(--blue); }
+
+.proof .section-sub,
+.curriculum .section-sub { color: var(--lt-muted); }
+
+/* img-ph light variant */
+.proof .img-ph {
+  background: #E8EDF5;
+  border-color: rgba(0,47,108,0.18);
+  color: rgba(0,47,108,0.35);
+}
+.proof .img-ph::before { background: none; }
+
+/* mod cards in light */
+.curriculum .mod-card {
+  background: var(--lt-card);
+  border: 1px solid var(--lt-border);
+  box-shadow: 0 2px 16px rgba(0,47,108,0.07);
+}
+.curriculum .mod-head {
+  background: linear-gradient(135deg, rgba(0,47,108,0.08) 0%, rgba(0,163,225,0.04) 100%);
+  border-bottom-color: var(--lt-border);
+}
+.curriculum .mod-num { color: var(--blue); }
+.curriculum .mod-title { color: var(--navy); }
+.curriculum .mod-body { background: #fff; }
+.curriculum .mod-list li { color: #374151; }
+.curriculum .mod-dot { background: var(--blue); }
+
 
 /* ═══════════════════════════════════════
    SECTION 7 — TARGET AUDIENCE
 ═══════════════════════════════════════ */
-.audience { background: var(--dark2); padding: 96px 0; }
+.audience { background: #06091A; padding: 96px 0; }
 .audience-grid {
   display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 52px;
 }
@@ -421,7 +464,7 @@ body { font-family: var(--f); background: var(--dark); color: #fff; overflow-x: 
    SECTION 8 — MENTOR
 ═══════════════════════════════════════ */
 .mentor {
-  background: linear-gradient(150deg, #080c1a 0%, rgba(0,47,108,0.25) 40%, #090909 100%);
+  background: linear-gradient(150deg, #06091A 0%, #0B1535 40%, #06091A 100%);
   padding: 96px 0;
 }
 .mentor-inner {
@@ -470,7 +513,7 @@ body { font-family: var(--f); background: var(--dark); color: #fff; overflow-x: 
    SECTION 9 — FINAL CTA
 ═══════════════════════════════════════ */
 .cta-sec {
-  background: linear-gradient(150deg, #070b1a 0%, rgba(0,47,108,0.55) 50%, #07070a 100%);
+  background: linear-gradient(150deg, #04061A 0%, #0B1535 50%, #04061A 100%);
   padding: 96px 0; text-align: center; position: relative; overflow: hidden;
 }
 .cta-sec::before {
@@ -515,7 +558,7 @@ body { font-family: var(--f); background: var(--dark); color: #fff; overflow-x: 
    FOOTER
 ═══════════════════════════════════════ */
 .footer {
-  background: #070707; border-top: 1px solid var(--border); padding: 36px 0;
+  background: #030508; border-top: 1px solid var(--border); padding: 36px 0;
 }
 .footer-inner {
   display: flex; justify-content: space-between; align-items: center;
