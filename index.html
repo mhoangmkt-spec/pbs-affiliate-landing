@@ -402,24 +402,56 @@ body { font-family: var(--f); background: var(--dark); color: #fff; overflow-x: 
 .proof-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: auto auto;
-  gap: 20px;
-  margin: 52px 0 52px;
+  grid-template-rows: 280px 280px;
+  gap: 12px;
+  margin: 40px 0 40px;
 }
-@media (max-width: 768px) { .proof-grid { grid-template-columns: 1fr 1fr; } }
-@media (max-width: 480px) { .proof-grid { grid-template-columns: 1fr; } }
+.proof-img {
+  border-radius: 14px; overflow: hidden;
+  border: 1px solid var(--lt-border);
+  box-shadow: 0 4px 20px rgba(0,47,108,0.08);
+}
+.proof-img img {
+  width: 100%; height: 100%;
+  object-fit: cover; object-position: top center;
+  display: block;
+}
+.proof-img-1 { grid-column: 1 / 3; grid-row: 1; }
+.proof-img-2 { grid-column: 3; grid-row: 1 / 3; }
+.proof-img-3 { grid-column: 1; grid-row: 2; }
+.proof-img-4 { grid-column: 2; grid-row: 2; }
 
-.proof-img-1 { grid-column: 1; grid-row: 1 / 3; height: 400px; }
-.proof-img-2 { height: 188px; }
-.proof-img-3 { height: 188px; }
-.proof-img-4 { height: 188px; }
-.proof-img-5 { height: 188px; }
+@media (max-width: 768px) {
+  .proof-grid {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 200px 260px 200px;
+  }
+  .proof-img-1 { grid-column: 1 / 3; grid-row: 1; }
+  .proof-img-2 { grid-column: 1; grid-row: 2; }
+  .proof-img-3 { grid-column: 2; grid-row: 2; }
+  .proof-img-4 { grid-column: 1 / 3; grid-row: 3; }
+}
+@media (max-width: 480px) {
+  .proof-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: 180px 280px 280px 180px;
+  }
+  .proof-img-1 { grid-column: 1; grid-row: 1; }
+  .proof-img-2 { grid-column: 1; grid-row: 2; }
+  .proof-img-3 { grid-column: 1; grid-row: 3; }
+  .proof-img-4 { grid-column: 1; grid-row: 4; }
+}
 
 .proof-source {
   font-size: 13px; color: var(--lt-muted); text-align: center;
   margin-bottom: 48px;
 }
 .proof-source strong { color: var(--navy); }
+.proof-sub { white-space: nowrap; max-width: none !important; }
+@media (max-width: 768px) {
+  .proof-sub { white-space: normal; }
+  .proof-sub-br { display: block; }
+}
 
 
 /* ═══════════════════════════════════════
@@ -821,42 +853,27 @@ body { font-family: var(--f); background: var(--dark); color: #fff; overflow-x: 
 <section class="proof">
   <div class="container">
     <div class="tc">
-      <div class="section-label">Bằng chứng thực tế</div>
       <h2 class="section-title" style="margin-bottom:12px;">
         <span class="h2-line">VÀ ĐÂY LÀ <span class="y">KẾT QUẢ THỰC TẾ</span></span>
-        <span class="h2-line">KHI LÀM AFFILIATE SHOPEE × FACEBOOK</span>
+        <span class="h2-line">KHI LÀM <span class="b">AFFILIATE SHOPEE × FACEBOOK</span></span>
       </h2>
-      <p class="section-sub" style="margin:0 auto 8px;">
-        Từ kênh của Thành Vũ và đội ngũ học viên — đều áp dụng chung
-        <strong style="color:#fff;">1 công thức</strong> làm hiệu quả.
+      <p class="section-sub proof-sub" style="margin:0 auto 8px;">
+        Từ kênh của Thành Vũ và đội ngũ học viên<span class="proof-sub-br"> </span>— đều áp dụng chung <strong style="color:var(--navy);">1 công thức</strong> làm hiệu quả.
       </p>
     </div>
 
     <div class="proof-grid">
-      <div class="img-ph proof-img-1" style="grid-column:1;grid-row:1/3;height:400px;">
-        <div class="img-ph-icon">📊</div>
-        <div class="img-ph-label">Screenshot<br>Doanh thu kênh chính</div>
-        <div class="img-ph-size">600 × 400</div>
+      <div class="proof-img proof-img-1">
+        <img src="photo_2026-05-06_10-45-38%20%285%29.jpg" alt="Kết quả 30 ngày — 203tr hoa hồng">
       </div>
-      <div class="img-ph proof-img-2" style="height:188px;">
-        <div class="img-ph-icon">💰</div>
-        <div class="img-ph-label">Kết quả học viên 1</div>
-        <div class="img-ph-size">580 × 188</div>
+      <div class="proof-img proof-img-2">
+        <img src="photo_2026-05-06_10-45-39%20%283%29.jpg" alt="Kết quả campaign Shopee — 10.6tr hoa hồng">
       </div>
-      <div class="img-ph proof-img-3" style="height:188px;">
-        <div class="img-ph-icon">💰</div>
-        <div class="img-ph-label">Kết quả học viên 2</div>
-        <div class="img-ph-size">580 × 188</div>
+      <div class="proof-img proof-img-3">
+        <img src="photo_2026-05-06_10-45-38.jpg" alt="Kết quả 30 ngày — 186tr hoa hồng + chart">
       </div>
-      <div class="img-ph proof-img-4" style="height:188px;">
-        <div class="img-ph-icon">📈</div>
-        <div class="img-ph-label">Kết quả học viên 3</div>
-        <div class="img-ph-size">580 × 188</div>
-      </div>
-      <div class="img-ph proof-img-5" style="height:188px;">
-        <div class="img-ph-icon">📈</div>
-        <div class="img-ph-label">Kết quả học viên 4</div>
-        <div class="img-ph-size">580 × 188</div>
+      <div class="proof-img proof-img-4">
+        <img src="photo_2026-05-06_10-45-38%20%284%29.jpg" alt="Kết quả 7 ngày — 805tr doanh số">
       </div>
     </div>
 
