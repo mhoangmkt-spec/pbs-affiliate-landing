@@ -499,8 +499,11 @@ body { font-family: var(--f); background: var(--dark); color: #fff; overflow-x: 
   color: var(--orange);
 }
 .course-card-title {
-  font-size: clamp(28px, 5.5vw, 64px); font-weight: 900;
+  font-size: clamp(28px, 3.6vw, 46px); font-weight: 900;
   letter-spacing: -0.02em; line-height: 1.15; color: #fff;
+}
+@media (max-width: 768px) {
+  .course-card-title { line-height: 1.45; }
 }
 .course-card-line { display: block; }
 .course-card-line.accent { color: var(--yellow); }
