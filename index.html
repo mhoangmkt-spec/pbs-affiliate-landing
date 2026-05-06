@@ -481,11 +481,32 @@ body { font-family: var(--f); background: var(--dark); color: #fff; overflow-x: 
   font-size: clamp(16px, 2vw, 20px); color: rgba(255,255,255,0.65);
   max-width: 640px; margin: 12px auto 20px; line-height: 1.8;
 }
-.ci-course-name {
-  font-size: clamp(20px, 2.8vw, 34px); font-weight: 900; letter-spacing: -0.02em;
-  line-height: 1.25; max-width: 720px; margin: 0 auto 36px;
+.course-card {
+  background: linear-gradient(140deg, #040812 0%, #0a1628 55%, #040c1e 100%);
+  border: 1.5px solid rgba(255,141,0,0.45);
+  border-radius: 24px;
+  padding: 48px 56px;
+  max-width: 900px; margin: 0 auto 36px;
+  position: relative;
+  box-shadow: 0 0 40px rgba(255,141,0,0.14), 0 0 80px rgba(255,141,0,0.07),
+              inset 0 1px 0 rgba(255,255,255,0.06);
 }
-.ci-course-name .y { color: var(--yellow); }
+.course-card-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 7px 18px; border-radius: 100px; margin-bottom: 24px;
+  background: rgba(255,141,0,0.14); border: 1px solid rgba(255,141,0,0.4);
+  font-size: 11px; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--orange);
+}
+.course-card-title {
+  font-size: clamp(28px, 5.5vw, 64px); font-weight: 900;
+  letter-spacing: -0.02em; line-height: 1.15; color: #fff;
+}
+.course-card-line { display: block; }
+.course-card-line.accent { color: var(--yellow); }
+@media (max-width: 768px) {
+  .course-card { padding: 32px 24px; border-radius: 18px; }
+}
 
 .ci-benefits {
   display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-top: 8px;
@@ -922,10 +943,13 @@ body { font-family: var(--f); background: var(--dark); color: #fff; overflow-x: 
       Nếu bạn muốn tạo ra nguồn thu nhập thụ động từ Affiliate Shopee × Facebook
       thì đây sẽ là <strong style="color:#fff;">khóa học miễn phí</strong> phù hợp với bạn
     </p>
-    <h2 class="ci-course-name">
-      "XÂY DỰNG HỆ THỐNG<br>
-      <span class="y">AFFILIATE SHOPEE × FACEBOOK 2026</span>"
-    </h2>
+    <div class="course-card">
+      <div class="course-card-badge">✦ Khóa học miễn phí 100%</div>
+      <h2 class="course-card-title">
+        <span class="course-card-line">XÂY DỰNG HỆ THỐNG</span>
+        <span class="course-card-line accent">AFFILIATE SHOPEE × FACEBOOK 2026</span>
+      </h2>
+    </div>
     <a href="#dang-ky" class="btn-cta btn-cta-lg" style="margin-bottom:44px;">THAM GIA KHÓA HỌC →</a>
 
     <div class="ci-benefits">
