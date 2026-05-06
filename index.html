@@ -629,7 +629,7 @@ body { font-family: var(--f); background: var(--dark); color: #fff; overflow-x: 
    SECTION 8 — MENTOR
 ═══════════════════════════════════════ */
 .mentor {
-  background: linear-gradient(150deg, #06091A 0%, #0B1535 40%, #06091A 100%);
+  background: var(--lt-bg);
   padding: 96px 0;
 }
 .mentor-inner {
@@ -638,7 +638,13 @@ body { font-family: var(--f); background: var(--dark); color: #fff; overflow-x: 
 @media (max-width: 960px) { .mentor-inner { grid-template-columns: 1fr; } }
 
 .mentor-photo-wrap { position: relative; }
-.mentor-photo { width: 100%; height: 460px; border-radius: 16px; }
+.mentor-photo-img {
+  width: 100%; height: 460px; border-radius: 16px;
+  object-fit: cover; object-position: top center;
+  border: 1.5px solid var(--lt-border);
+  box-shadow: 0 8px 32px rgba(0,47,108,0.1);
+  display: block;
+}
 .mentor-badge {
   position: absolute; bottom: -16px; left: 50%; transform: translateX(-50%);
   background: var(--orange); color: #fff; padding: 10px 28px; border-radius: 100px;
@@ -649,29 +655,34 @@ body { font-family: var(--f); background: var(--dark); color: #fff; overflow-x: 
 .mentor-content { padding-bottom: 8px; }
 .mentor-name {
   font-size: clamp(36px, 4vw, 52px); font-weight: 900; line-height: 1.05;
-  letter-spacing: -0.03em; margin-bottom: 6px;
+  letter-spacing: -0.03em; margin-bottom: 6px; color: var(--navy);
 }
 .mentor-role {
   font-size: 15px; color: var(--blue); font-weight: 600; margin-bottom: 28px;
-  padding-bottom: 28px; border-bottom: 1px solid var(--border);
+  padding-bottom: 28px; border-bottom: 1px solid var(--lt-border);
 }
 
 .mentor-stats-row {
   display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 32px;
 }
 .m-stat {
-  text-align: center; background: rgba(255,255,255,0.035);
-  border: 1px solid var(--border); border-radius: 12px; padding: 20px 12px;
+  text-align: center; background: #fff;
+  border: 1px solid var(--lt-border); border-radius: 12px; padding: 20px 12px;
+}
+.m-stat.m-stat-highlight {
+  border-color: rgba(255,141,0,0.5);
+  box-shadow: 0 0 0 3px rgba(255,141,0,0.08);
+  background: #fff9f2;
 }
 .m-stat-val { font-size: 26px; font-weight: 900; color: var(--orange); line-height: 1; }
-.m-stat-lbl { font-size: 11px; color: var(--muted); margin-top: 5px; line-height: 1.4; }
+.m-stat-lbl { font-size: 11px; color: var(--lt-muted); margin-top: 5px; line-height: 1.4; }
 
 .mentor-creds { display: flex; flex-direction: column; gap: 11px; margin-bottom: 36px; }
 .mentor-cred {
   display: flex; align-items: flex-start; gap: 12px;
-  font-size: 14px; line-height: 1.55; color: rgba(255,255,255,0.7);
+  font-size: 14px; line-height: 1.55; color: #374151;
 }
-.mentor-cred-icon { color: var(--yellow); flex-shrink: 0; margin-top: 2px; font-size: 15px; }
+.mentor-cred-icon { color: var(--orange); flex-shrink: 0; margin-top: 2px; font-size: 15px; }
 
 
 /* ═══════════════════════════════════════
@@ -1079,8 +1090,8 @@ body { font-family: var(--f); background: var(--dark); color: #fff; overflow-x: 
     <div class="mentor-inner">
 
       <div class="mentor-photo-wrap">
-        <div class="img-ph mentor-photo" style="height:460px;">
-          <div class="img-ph-icon">👤</div>
+        <div class="mentor-photo" style="height:460px;">
+          <img src="thanhvu-ecom.jpg" alt="Mentor Thành Vũ Ecom" class="mentor-photo-img">
           <div class="img-ph-label">Ảnh Mentor<br>Thành Vũ Ecom</div>
           <div class="img-ph-size">360 × 460</div>
         </div>
@@ -1102,9 +1113,9 @@ body { font-family: var(--f); background: var(--dark); color: #fff; overflow-x: 
             <div class="m-stat-val">12+</div>
             <div class="m-stat-lbl">Năm kinh doanh online</div>
           </div>
-          <div class="m-stat">
+          <div class="m-stat m-stat-highlight">
             <div class="m-stat-val">10+</div>
-            <div class="m-stat-lbl">Kênh Affiliate hoạt động</div>
+            <div class="m-stat-lbl">Kênh Affiliate đạt hoa hồng cao hàng tháng</div>
           </div>
         </div>
 
