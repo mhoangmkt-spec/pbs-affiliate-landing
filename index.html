@@ -335,17 +335,20 @@ body { font-family: var(--f); background: var(--dark); color: #fff; overflow-x: 
   color: rgba(255,255,255,0.75); max-width: 780px; margin: 0 auto;
   font-weight: 400;
 }
+.insight-intro .h2-line { display: block; white-space: nowrap; }
+@media (max-width: 768px) { .insight-intro .h2-line { white-space: normal; } }
 .insight-stat {
   font-size: clamp(64px, 10vw, 120px); font-weight: 900; color: var(--yellow);
   line-height: 1; margin: 20px 0 4px; letter-spacing: -0.04em;
   text-shadow: 0 0 40px rgba(255,233,22,0.5), 0 0 80px rgba(255,233,22,0.25);
 }
 .insight-stat-sub {
-  font-size: clamp(16px, 2vw, 22px); color: rgba(255,255,255,0.85);
+  font-size: clamp(16px, 2vw, 22px); color: var(--yellow);
   font-weight: 700; margin-bottom: 28px;
+  text-shadow: 0 0 30px rgba(255,233,22,0.45), 0 0 60px rgba(255,233,22,0.2);
 }
 .insight-because {
-  font-size: 16px; color: rgba(255,255,255,0.55); max-width: 640px;
+  font-size: clamp(17px, 2.2vw, 22px); color: rgba(255,255,255,0.75); max-width: 780px;
   margin: 0 auto 40px; line-height: 1.7;
 }
 
@@ -775,8 +778,8 @@ body { font-family: var(--f); background: var(--dark); color: #fff; overflow-x: 
 <section class="insight">
   <div class="container">
     <p class="insight-intro">
-      Hàng triệu người đang chăm chỉ rải link Affiliate Shopee mỗi ngày<br>
-      nhưng chỉ có
+      <span class="h2-line">Hàng triệu người đang chăm chỉ rải link</span>
+      <span class="h2-line">Affiliate Shopee mỗi ngày — nhưng chỉ có</span>
     </p>
     <div class="insight-stat">10%</div>
     <div class="insight-stat-sub">trong số họ thực sự tạo ra thu nhập đều đặn</div>
