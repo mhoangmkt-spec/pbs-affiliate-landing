@@ -315,6 +315,16 @@ body { font-family: var(--f); background: var(--dark); color: #fff; overflow-x: 
 .insight {
   background: linear-gradient(160deg, #04061a 0%, #002F6C 45%, #060918 100%);
   padding: 96px 0; text-align: center;
+  position: relative; overflow: hidden;
+}
+.insight::after {
+  content: '';
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.07) 1px, transparent 1px);
+  background-size: 44px 44px;
+  pointer-events: none;
 }
 .insight-intro {
   font-size: clamp(17px, 2.2vw, 22px); line-height: 1.75;
@@ -324,6 +334,7 @@ body { font-family: var(--f); background: var(--dark); color: #fff; overflow-x: 
 .insight-stat {
   font-size: clamp(64px, 10vw, 120px); font-weight: 900; color: var(--yellow);
   line-height: 1; margin: 20px 0 4px; letter-spacing: -0.04em;
+  text-shadow: 0 0 40px rgba(255,233,22,0.5), 0 0 80px rgba(255,233,22,0.25);
 }
 .insight-stat-sub {
   font-size: clamp(16px, 2vw, 22px); color: rgba(255,255,255,0.85);
@@ -335,7 +346,7 @@ body { font-family: var(--f); background: var(--dark); color: #fff; overflow-x: 
 }
 
 .formula {
-  display: flex; flex-wrap: wrap; align-items: center; justify-content: center;
+  display: flex; flex-wrap: nowrap; align-items: center; justify-content: center;
   gap: 12px; margin-bottom: 48px;
 }
 .formula-pill {
@@ -345,6 +356,17 @@ body { font-family: var(--f); background: var(--dark); color: #fff; overflow-x: 
   color: var(--blue);
 }
 .formula-plus { font-size: 22px; font-weight: 900; color: rgba(255,255,255,0.2); }
+@media (max-width: 600px) {
+  .formula { flex-direction: column; align-items: stretch; gap: 8px; }
+  .formula-plus { display: none; }
+  .formula-pill {
+    border-radius: 12px; text-align: left;
+    padding: 12px 18px; font-size: 14px;
+  }
+  .formula-pill:nth-child(1)::before { content: '01 — '; }
+  .formula-pill:nth-child(3)::before { content: '02 — '; }
+  .formula-pill:nth-child(5)::before { content: '03 — '; }
+}
 
 
 /* ═══════════════════════════════════════
