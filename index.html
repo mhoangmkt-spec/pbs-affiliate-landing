@@ -1220,6 +1220,13 @@ body { font-family: var(--f); background: var(--dark); color: #fff; overflow-x: 
 </footer>
 
 <script>
+// Facebook Pixel — track Lead khi click bất kỳ nút CTA
+document.querySelectorAll('.btn-cta').forEach(function(btn) {
+  btn.addEventListener('click', function() {
+    if (typeof fbq === 'function') fbq('track', 'Lead');
+  });
+});
+
 (function () {
   var el = document.getElementById('insight-stat');
   if (!el) return;
