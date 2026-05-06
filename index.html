@@ -252,6 +252,10 @@ body { font-family: var(--f); background: var(--dark); color: #fff; overflow-x: 
 }
 .myths-headline .danger { color: var(--scarcity); }
 .myths-headline .h2-line { display: block; white-space: nowrap; }
+@media (max-width: 768px) {
+  .myths-headline { font-size: 17px; }
+  .myths-headline .h2-line { white-space: normal; }
+}
 
 .myths-grid {
   display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
