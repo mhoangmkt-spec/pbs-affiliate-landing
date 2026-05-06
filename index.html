@@ -335,8 +335,12 @@ body { font-family: var(--f); background: var(--dark); color: #fff; overflow-x: 
   color: rgba(255,255,255,0.75); max-width: 780px; margin: 0 auto;
   font-weight: 400;
 }
-.insight-intro .h2-line { display: block; white-space: nowrap; }
-@media (max-width: 768px) { .insight-intro .h2-line { white-space: normal; } }
+.insight-intro .h2-line,
+.insight-because .h2-line { display: block; white-space: nowrap; }
+@media (max-width: 768px) {
+  .insight-intro .h2-line,
+  .insight-because .h2-line { white-space: normal; }
+}
 .insight-stat {
   font-size: clamp(64px, 10vw, 120px); font-weight: 900; color: var(--yellow);
   line-height: 1; margin: 20px 0 4px; letter-spacing: -0.04em;
@@ -784,7 +788,8 @@ body { font-family: var(--f); background: var(--dark); color: #fff; overflow-x: 
     <div class="insight-stat">10%</div>
     <div class="insight-stat-sub">trong số họ thực sự tạo ra thu nhập đều đặn</div>
     <p class="insight-because">
-      nhờ vào việc nắm đúng 3 yếu tố cốt lõi mà phần lớn người làm affiliate bỏ qua:
+      <span class="h2-line">nhờ vào việc nắm đúng 3 yếu tố cốt lõi</span>
+      <span class="h2-line">mà phần lớn người làm affiliate bỏ qua:</span>
     </p>
     <div class="formula">
       <div class="formula-pill">Làm đúng công thức</div>
