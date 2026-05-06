@@ -700,9 +700,13 @@ body { font-family: var(--f); background: var(--dark); color: #fff; overflow-x: 
 .cta-sec-inner { position: relative; z-index: 1; max-width: 720px; margin: 0 auto; }
 .cta-headline {
   font-size: clamp(24px, 4vw, 44px); font-weight: 900; letter-spacing: -0.02em;
-  line-height: 1.2; margin-bottom: 16px;
+  line-height: 1.25; margin-bottom: 16px;
 }
+.cta-headline .h2-line { display: block; white-space: nowrap; }
 .cta-headline .y { color: var(--yellow); }
+@media (max-width: 600px) {
+  .cta-headline .h2-line { white-space: normal; }
+}
 .cta-sub { font-size: 17px; color: var(--muted); margin-bottom: 44px; line-height: 1.7; }
 
 .schedule-cards {
@@ -1156,14 +1160,11 @@ body { font-family: var(--f); background: var(--dark); color: #fff; overflow-x: 
     <div class="cta-sec-inner">
       <div class="free-chip">✓ Hoàn toàn miễn phí</div>
       <h2 class="cta-headline">
-        THAM GIA LỚP HỌC ĐỂ BẮT ĐẦU<br>
-        KIẾM TIỀN VỚI <span class="y">AFFILIATE SHOPEE</span><br>
-        NGAY HÔM NAY
+        <span class="h2-line">THAM GIA LỚP HỌC ĐỂ BẮT ĐẦU</span>
+        <span class="h2-line">KIẾM TIỀN VỚI <span class="y">AFFILIATE SHOPEE</span></span>
+        <span class="h2-line">NGAY HÔM NAY</span>
       </h2>
-      <p class="cta-sub">
-        Đăng ký ngay để nhận link tham gia — lớp học online qua Zoom,
-        học từ xa, không cần đến trực tiếp
-      </p>
+      <p class="cta-sub">Đăng ký ngay để nhận link tham gia — lớp học online qua Zoom, học từ xa, không cần đến trực tiếp</p>
 
       <div class="schedule-cards">
         <div class="sch-card">
