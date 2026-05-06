@@ -345,7 +345,22 @@ body { font-family: var(--f); background: var(--dark); color: #fff; overflow-x: 
   font-size: clamp(64px, 10vw, 120px); font-weight: 900; color: var(--yellow);
   line-height: 1; margin: 20px 0 4px; letter-spacing: -0.04em;
   text-shadow: 0 0 40px rgba(255,233,22,0.5), 0 0 80px rgba(255,233,22,0.25);
+  position: relative;
 }
+.insight-stat::before {
+  content: '';
+  position: absolute; inset: -60px -80px;
+  background: radial-gradient(ellipse at center, rgba(255,233,22,0.18) 0%, transparent 70%);
+  opacity: 0; pointer-events: none;
+  transition: opacity 0.6s ease;
+}
+.insight-stat.stat-done::before { opacity: 1; }
+@keyframes glow-burst {
+  0%   { text-shadow: 0 0 40px rgba(255,233,22,0.5), 0 0 80px rgba(255,233,22,0.25); }
+  40%  { text-shadow: 0 0 60px rgba(255,233,22,1), 0 0 120px rgba(255,233,22,0.7), 0 0 200px rgba(255,233,22,0.4); }
+  100% { text-shadow: 0 0 40px rgba(255,233,22,0.5), 0 0 80px rgba(255,233,22,0.25); }
+}
+.insight-stat.stat-done { animation: glow-burst 0.8s ease-out forwards; }
 .insight-stat-sub {
   font-size: clamp(16px, 2vw, 22px); color: var(--yellow);
   font-weight: 700; margin-bottom: 12px;
@@ -785,7 +800,7 @@ body { font-family: var(--f); background: var(--dark); color: #fff; overflow-x: 
       <span class="h2-line">Hàng triệu người đang chăm chỉ rải link</span>
       <span class="h2-line">Affiliate Shopee mỗi ngày — nhưng chỉ có</span>
     </p>
-    <div class="insight-stat">10%</div>
+    <div class="insight-stat" id="insight-stat">0%</div>
     <div class="insight-stat-sub">trong số họ thực sự tạo ra thu nhập đều đặn</div>
     <p class="insight-because">
       <span class="h2-line">nhờ vào việc nắm đúng 3 yếu tố cốt lõi</span>
@@ -1112,5 +1127,40 @@ body { font-family: var(--f); background: var(--dark); color: #fff; overflow-x: 
   </div>
 </footer>
 
+<script>
+(function () {
+  var el = document.getElementById('insight-stat');
+  if (!el) return;
+  var target = 10, duration = 1400, started = false;
+
+  function easeOut(t) { return 1 - Math.pow(1 - t, 3); }
+
+  function runCounter() {
+    if (started) return;
+    started = true;
+    var start = performance.now();
+    function tick(now) {
+      var progress = Math.min((now - start) / duration, 1);
+      var val = Math.round(easeOut(progress) * target);
+      el.textContent = val + '%';
+      if (progress < 1) {
+        requestAnimationFrame(tick);
+      } else {
+        el.textContent = '10%';
+        el.classList.add('stat-done');
+      }
+    }
+    requestAnimationFrame(tick);
+  }
+
+  var observer = new IntersectionObserver(function (entries) {
+    if (entries[0].isIntersecting) {
+      runCounter();
+      observer.disconnect();
+    }
+  }, { threshold: 0.4 });
+  observer.observe(el);
+})();
+</script>
 </body>
 </html>
