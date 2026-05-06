@@ -66,6 +66,10 @@ body { font-family: var(--f); background: var(--dark); color: #fff; overflow-x: 
 .section-title .y { color: var(--yellow); }
 .section-title .b { color: var(--blue); }
 .section-title .o { color: var(--orange); }
+.section-title .h2-line { display: block; white-space: nowrap; }
+@media (max-width: 768px) {
+  .section-title .h2-line { white-space: normal; }
+}
 .section-sub {
   font-size: 16px; color: var(--muted); line-height: 1.75; max-width: 580px;
 }
@@ -353,7 +357,7 @@ body { font-family: var(--f); background: var(--dark); color: #fff; overflow-x: 
   padding: 10px 22px; border-radius: 100px;
   background: rgba(0,163,225,0.1); border: 1px solid rgba(0,163,225,0.3);
   font-size: 13px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase;
-  color: var(--blue);
+  color: var(--blue); white-space: nowrap;
 }
 .formula-plus { font-size: 22px; font-weight: 900; color: rgba(255,255,255,0.2); }
 @media (max-width: 600px) {
@@ -797,8 +801,8 @@ body { font-family: var(--f); background: var(--dark); color: #fff; overflow-x: 
     <div class="tc">
       <div class="section-label">Bằng chứng thực tế</div>
       <h2 class="section-title" style="margin-bottom:12px;">
-        VÀ ĐÂY LÀ <span class="y">KẾT QUẢ THỰC TẾ</span><br>
-        KHI LÀM AFFILIATE SHOPEE × FACEBOOK
+        <span class="h2-line">VÀ ĐÂY LÀ <span class="y">KẾT QUẢ THỰC TẾ</span></span>
+        <span class="h2-line">KHI LÀM AFFILIATE SHOPEE × FACEBOOK</span>
       </h2>
       <p class="section-sub" style="margin:0 auto 8px;">
         Từ kênh của Thành Vũ và đội ngũ học viên — đều áp dụng chung
@@ -872,8 +876,8 @@ body { font-family: var(--f); background: var(--dark); color: #fff; overflow-x: 
     <div class="tc">
       <div class="section-label">Nội dung khóa học</div>
       <h2 class="section-title" style="margin-bottom:12px;">
-        Khóa học trang bị cho bạn<br>
-        <span class="b">3 kỹ năng cốt lõi</span>
+        <span class="h2-line">Khóa học trang bị cho bạn</span>
+        <span class="h2-line"><span class="b">3 kỹ năng cốt lõi</span></span>
       </h2>
       <p class="section-sub">
         Để bắt đầu làm Affiliate Shopee hiệu quả ngay hôm nay — từ nhập môn đến nhân bản hệ thống
