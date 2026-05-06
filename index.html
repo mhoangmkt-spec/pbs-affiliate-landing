@@ -688,6 +688,13 @@ body { font-family: var(--f); background: var(--dark); color: #fff; overflow-x: 
 }
 .m-stat-val { font-size: 32px; font-weight: 900; color: var(--orange); line-height: 1; }
 .m-stat-lbl { font-size: 13px; color: var(--lt-muted); margin-top: 6px; line-height: 1.4; }
+@media (max-width: 600px) {
+  .mentor-stats-row { grid-template-columns: 1fr 1fr; gap: 10px; }
+  .mentor-stats-row .m-stat:last-child { grid-column: 1 / -1; }
+  .m-stat { padding: 16px 10px; }
+  .m-stat-val { font-size: 26px; }
+  .m-stat-lbl { font-size: 12px; }
+}
 
 .mentor-creds { display: flex; flex-direction: column; gap: 11px; margin-bottom: 36px; }
 .mentor-cred {
@@ -1122,7 +1129,7 @@ body { font-family: var(--f); background: var(--dark); color: #fff; overflow-x: 
           </div>
           <div class="m-stat">
             <div class="m-stat-val">10+</div>
-            <div class="m-stat-lbl">Kênh Affiliate đạt hoa hồng cao hàng tháng</div>
+            <div class="m-stat-lbl">Kênh Affiliate hoa hồng cao</div>
           </div>
         </div>
 
