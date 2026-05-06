@@ -355,12 +355,11 @@ body { font-family: var(--f); background: var(--dark); color: #fff; overflow-x: 
   transition: opacity 0.6s ease;
 }
 .insight-stat.stat-done::before { opacity: 1; }
-@keyframes glow-burst {
-  0%   { text-shadow: 0 0 40px rgba(255,233,22,0.5), 0 0 80px rgba(255,233,22,0.25); }
-  40%  { text-shadow: 0 0 60px rgba(255,233,22,1), 0 0 120px rgba(255,233,22,0.7), 0 0 200px rgba(255,233,22,0.4); }
-  100% { text-shadow: 0 0 40px rgba(255,233,22,0.5), 0 0 80px rgba(255,233,22,0.25); }
+@keyframes pulse-glow {
+  0%, 100% { text-shadow: 0 0 20px rgba(255,233,22,0.3), 0 0 50px rgba(255,233,22,0.15); }
+  50%       { text-shadow: 0 0 40px rgba(255,233,22,0.6), 0 0 90px rgba(255,233,22,0.3); }
 }
-.insight-stat.stat-done { animation: glow-burst 0.8s ease-out forwards; }
+.insight-stat.stat-done { animation: pulse-glow 2.8s ease-in-out infinite; }
 .insight-stat-sub {
   font-size: clamp(16px, 2vw, 22px); color: var(--yellow);
   font-weight: 700; margin-bottom: 12px;
