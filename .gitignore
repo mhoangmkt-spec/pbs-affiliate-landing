@@ -1,0 +1,8 @@
+# Ignore Wrangler local metadata
+.wrangler/
+
+# Node modules (if any)
+node_modules/
+
+# Local environment files
+.env
